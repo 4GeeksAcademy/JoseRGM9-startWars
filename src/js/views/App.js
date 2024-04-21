@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { PersonaCard, VehiculoCard, PlanetaCard } from "/workspaces/JoseRGM9-startWars/src/js/component/Cards.jsx";
-import { Navbar } from "/workspaces/JoseRGM9-startWars/src/js/component/navbar.js";
+
 import { Context } from '/workspaces/JoseRGM9-startWars/src/js/store/appContext.js';
 
 export const App = () => {
@@ -17,7 +17,7 @@ export const App = () => {
 
     return (
         <div>
-            <Navbar favoritos={store.favoritos} />
+            
             <h1>Star Wars API Demo</h1>
 
             <h2>Personajes</h2>
@@ -34,7 +34,7 @@ export const App = () => {
             </div>
 
             <h2>Vehículos</h2>
-            <div className="row">
+            <div className="scroll-container">
                 {store.vehiculos.map((vehiculo, index) => (
                     <div className="col-md-3" key={index}>
                         <VehiculoCard
@@ -47,7 +47,7 @@ export const App = () => {
             </div>
 
             <h2>Planetas</h2>
-            <div className="row">
+            <div className="scroll-container">
                 {store.planetas.map((planeta, index) => (
                     <div className="col-md-3" key={index}>
                         <PlanetaCard
