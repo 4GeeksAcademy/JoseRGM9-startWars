@@ -8,10 +8,10 @@ export const PersonajeDetalle = () => {
     const [personajeDetalle, setPersonajeDetalle] = useState(null);
 
     useEffect(() => {
-        // Llamar a la función fetchPersonajeDetalle con el ID del personaje
+        // Llamo a la funcion fetchPersonajeDetalle con el ID del personaje
         actions.fetchPersonajeDetalle(id)
             .then(data => {
-                setPersonajeDetalle(data); // Actualizar el estado con la información del personaje
+                setPersonajeDetalle(data); // Actualizo el estado con la informacion del personaje
                 actions.cargarFavoritos()
             });
     }, [id]);

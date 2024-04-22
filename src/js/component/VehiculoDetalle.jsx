@@ -8,10 +8,9 @@ export const VehiculoDetalle = () => {
     const [vehiculoDetalle, setVehiculoDetalle] = useState(null);
 
     useEffect(() => {
-        // Llamar a la función fetchVehiculoDetalle con el ID del vehículo
         actions.fetchVehiculoDetalle(id)
             .then(data => {
-                setVehiculoDetalle(data); // Actualizar el estado con la información del vehículo
+                setVehiculoDetalle(data); 
                 actions.cargarFavoritos()
             });
     }, [id]);

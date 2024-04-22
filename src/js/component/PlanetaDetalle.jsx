@@ -8,10 +8,9 @@ export const PlanetaDetalle = () => {
     const [planetaDetalle, setPlanetaDetalle] = useState(null);
 
     useEffect(() => {
-        // Llamar a la función fetchPlanetaDetalle con el ID del planeta
         actions.fetchPlanetaDetalle(id)
             .then(data => {
-                setPlanetaDetalle(data); // Actualizar el estado con la información del planeta
+                setPlanetaDetalle(data); 
                 actions.cargarFavoritos()
             });
     }, [id]);

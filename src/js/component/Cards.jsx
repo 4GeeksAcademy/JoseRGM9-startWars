@@ -59,7 +59,6 @@ export const VehiculoCard = ({ vehiculo, agregarFavorito, favoritos }) => {
 
 export const PlanetaCard = ({ planeta, agregarFavorito, favoritos }) => {
 
-
     const estaEnFavoritosPlaneta = favoritos.some(favorito => favorito.name === planeta.name);
 
     return (

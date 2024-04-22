@@ -39,7 +39,7 @@ export const getState = ({ getStore, getActions, setStore }) => ({
                 setStore({ favoritos: favoritosActualizados });
                 setStore({ contadorFavoritos: store.contadorFavoritos - 1 });
             }
-            // Guardar los favoritos en el almacenamiento local después de actualizar el estado
+            // Guardo los favoritos en el almacenamiento local despues de actualizar el estado
             getActions().guardarFavoritos();
         },
 
@@ -49,8 +49,7 @@ export const getState = ({ getStore, getActions, setStore }) => ({
             if (favoritosActualizados.length === store.favoritos.length) {      // El vehiculo no estaba en la lista de favoritos lo agrego
                 setStore({ favoritos: [...store.favoritos, vehiculo] });
                 setStore({ contadorFavoritos: store.contadorFavoritos + 1 });
-            } else {
-                // El vehículo ya estaba en la lista de favoritos, lo eliminamos
+            } else { 
                 setStore({ favoritos: favoritosActualizados });
                 setStore({ contadorFavoritos: store.contadorFavoritos - 1 });
             }
@@ -61,16 +60,16 @@ export const getState = ({ getStore, getActions, setStore }) => ({
             const store = getStore();
             const favoritosActualizados = store.favoritos.filter(fav => fav.name !== planeta.name);
             if (favoritosActualizados.length === store.favoritos.length) {
-                // El planeta no estaba en la lista de favoritos, lo agregamos
                 setStore({ favoritos: [...store.favoritos, planeta] });
                 setStore({ contadorFavoritos: store.contadorFavoritos + 1 });
             } else {
-                // El planeta ya estaba en la lista de favoritos, lo eliminamos
                 setStore({ favoritos: favoritosActualizados });
                 setStore({ contadorFavoritos: store.contadorFavoritos - 1 });
             }
             getActions().guardarFavoritos();
         },
+
+
 
         cargarFavoritos: () => {
             const localFavorites = JSON.parse(localStorage.getItem("favoritos"));
@@ -85,6 +84,8 @@ export const getState = ({ getStore, getActions, setStore }) => ({
             localStorage.setItem("favoritos", JSON.stringify(store.favoritos));
         },
 
+
+
         eliminarFavorito: (favorito, event) => {
             event.stopPropagation(); // esto es para que no se cierre el dropdown al borrar un favorito
             const store = getStore();
@@ -95,6 +96,8 @@ export const getState = ({ getStore, getActions, setStore }) => ({
             getActions().guardarFavoritos();
         },
 
+
+
         fetchPersonajeDetalle: (personajeId) => {
             return fetch(`https://www.swapi.tech/api/people/${personajeId}`)
                 .then(response => {
@@ -103,8 +106,7 @@ export const getState = ({ getStore, getActions, setStore }) => ({
                     }
                     return response.json();
                 })
-                .then(data => {
-                    // Aquí puedes manejar la data como lo necesites
+                .then(data => {   
                     return data.result;
                 })
                 .catch(error => {
@@ -122,7 +124,6 @@ export const getState = ({ getStore, getActions, setStore }) => ({
                     return response.json();
                 })
                 .then(data => {
-                    // Aquí puedes manejar la data como lo necesites
                     return data.result;
                 })
                 .catch(error => {
@@ -140,7 +141,6 @@ export const getState = ({ getStore, getActions, setStore }) => ({
                     return response.json();
                 })
                 .then(data => {
-                    // Aquí puedes manejar la data como lo necesites
                     return data.result;
                 })
                 .catch(error => {
