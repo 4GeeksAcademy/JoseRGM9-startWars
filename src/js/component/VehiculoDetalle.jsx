@@ -2,16 +2,16 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Context } from '/workspaces/JoseRGM9-startWars/src/js/store/appContext.js';
 
-export const PersonajeDetalle = () => {
+export const VehiculoDetalle = () => {
     const { id } = useParams();
     const { store, actions } = useContext(Context);
-    const [personajeDetalle, setPersonajeDetalle] = useState(null);
+    const [vehiculoDetalle, setVehiculoDetalle] = useState(null);
 
     useEffect(() => {
-        // Llamar a la función fetchPersonajeDetalle con el ID del personaje
-        actions.fetchPersonajeDetalle(id)
+        // Llamar a la función fetchVehiculoDetalle con el ID del vehículo
+        actions.fetchVehiculoDetalle(id)
             .then(data => {
-                setPersonajeDetalle(data); // Actualizar el estado con la información del personaje
+                setVehiculoDetalle(data); // Actualizar el estado con la información del vehículo
                 actions.cargarFavoritos()
             });
     }, [id]);
@@ -25,47 +25,47 @@ export const PersonajeDetalle = () => {
                         <img src="https://blog.camaralia.com/wp-content/uploads/2016/01/Star-Wars-Blu-ray1.jpg" className="cardImagenDetalle" alt="..." />
                     </div>
                     <div className="columnaImagenYDescripcion">
-                        <h4>Descripcion</h4>
-                    </div>
+                            <h4>Descripcion</h4>
+                        </div>
                 </div>
                 <div className="separador">
                 </div>
                 <div>
-                    <h5 className="cardTitulo">Detalles del Personaje</h5>
+                    <h5 className="cardTitulo">Detalles del Vehículo</h5>
                 </div>
-                {personajeDetalle ? (
+                {vehiculoDetalle ? (
                     <div className="card-body-detalle">
                         <div className="detalle">
                             <p>Nombre</p>
-                            <p>{personajeDetalle.properties.name}</p>
+                            <p>{vehiculoDetalle.properties.name}</p>
                         </div>
                         <div className="detalle">
-                            <p>Año de nacimiento</p>
-                            <p>{personajeDetalle.properties.birth_year}</p>
+                            <p>Modelo</p>
+                            <p>{vehiculoDetalle.properties.model}</p>
                         </div>
                         <div className="detalle">
-                            <p>Genero</p>
-                            <p>{personajeDetalle.properties.gender}</p>
+                            <p>Fabricante</p>
+                            <p>{vehiculoDetalle.properties.manufacturer}</p>
                         </div>
                         <div className="detalle">
-                            <p>Altura</p>
-                            <p>{personajeDetalle.properties.height}</p>
+                            <p>Largo</p>
+                            <p>{vehiculoDetalle.properties.length}</p>
                         </div>
                         <div className="detalle">
-                            <p>Peso</p>
-                            <p>{personajeDetalle.properties.mass}</p>
+                            <p>Capacidad de carga</p>
+                            <p>{vehiculoDetalle.properties.cargo_capacity}</p>
                         </div>
                         <div className="detalle">
-                            <p>Color de Ojos</p>
-                            <p>{personajeDetalle.properties.eye_color}</p>
+                            <p>Consumables</p>
+                            <p>{vehiculoDetalle.properties.consumables}</p>
                         </div>
                         <div className="detalle">
-                            <p>Color de Cabello</p>
-                            <p>{personajeDetalle.properties.hair_color}</p>
+                            <p>Costo en creditos</p>
+                            <p>{vehiculoDetalle.properties.cost_in_credits}</p>
                         </div>
                     </div>
                 ) :
-                    <p>Cargando detalles del personaje...</p>
+                    <p>Cargando detalles del vehículo...</p>
                 }
             </div>
         </div>

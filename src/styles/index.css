@@ -5,66 +5,118 @@ body {
     background-color: black;
 }
 
+
+/*Navbar*/
+
 .navbar-brand {
-    margin-left: 30px;
+    margin-left: 70px;
 }
 
-.botonFavoritos{
-    margin-right: 30px;
+.botonFavoritos {
+    margin-right: 65px;
 }
 
-.containerCard {
-    height: 100%; /* Establecer la altura de la tarjeta */
-    display: flex; /* Usar flexbox */
-    flex-direction: column; /* Establecer la dirección de los elementos hijos */
+.dropdown-menu {
+    background-color: rgb(241, 238, 238);
 }
 
-.card {
-    margin-bottom: 20px;
-    background-color: rgb(218, 214, 214);
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.card-title {
-    margin-bottom: 40px;
-}
-
-.card-body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-h1 {
+/*App*/
+.tituloContainer {
     color: rgb(218, 214, 214);
-    margin-left: 110px;
+    margin-left: 70px;
 }
 
-h2 {
+.subtitulosContainer {
     color: rgb(218, 214, 214);
-    margin-left: 110px;
+    margin-left: 70px;
     margin-bottom: 30px;
     margin-top: 50px;
 }
 
-
-.botonesFavLeerMas {
-    display: flex;
-    justify-content: space-between;
-    margin-top: auto;
-}
-
+/*Cards de app y cards*/
 .scroll-container {
     overflow-x: auto;
     white-space: nowrap;
     margin-left: 50px;
+    margin-right: 65px;
+}
+
+.scroll-container>div {
+    display: inline-block;
+    width: 25%;
+    /* Ajusto el ancho de cada tarjeta para mostrar cuatro tarjetas por fila y no se vea feo */
+}
+
+.card {
+    background-color: rgb(218, 214, 214);
+    margin-left: 10px;
+}
+
+.card-title {
+    margin-bottom: 30px;
+}
+
+.botonesFavLeerMas {
+    display: flex;
+    justify-content: space-between;
+}
+
+.containerCard {
+    margin-bottom: 10px;
+}
+
+.finalContainer {
+    padding: 30px;
+    text-align: center;
+    color: white;
+}
+
+
+/*Cards de personajes detallados*/
+.filaImagenYDescripcion {
+    display: flex;
+    margin-left: 50px;
     margin-right: 50px;
 }
 
-.scroll-container > div {
-    display: inline-block;
-    width: 25%; /* Ajusta el ancho de cada tarjeta para mostrar cuatro tarjetas por fila */
+.columnaImagenYDescripcion {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    height: 600px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    color: rgb(218, 214, 214);
+}
+
+.cardImagenDetalle {
+    max-width: 100%;
+    /* Asegura que la imagen no se extienda más allá del ancho de la columna */
+    max-height: 100%;
+}
+
+.cardTitulo {
+    text-align: center;
+    margin-top: 30px;
+    color: rgb(218, 214, 214);
+}
+
+.card-body-detalle {
+    display: flex;
+    flex-wrap: wrap;
+    /* Para que los detalles se envuelvan si no caben en una sola linea */
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.detalle {
+    margin-left: 50px;
+    color: rgb(218, 214, 214);
+
+}
+
+.separador {
+    border-top: 1px solid #ffffff;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }

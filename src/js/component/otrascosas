@@ -49,3 +49,24 @@
                     <p className="card-text">
                         <strong>Terreno:</strong> {planeta.terrain}
                     </p>
+
+
+
+                    <div className="containerCard">
+            <div className="card">
+                <img src="https://blog.camaralia.com/wp-content/uploads/2016/01/Star-Wars-Blu-ray1.jpg" className="card-img-top" alt="..." />
+                {personajeDetalle ? (
+                    <div className="card-body">
+                        <h5 className="card-title">Detalles del Personaje</h5>
+                        <p>Nombre: {personajeDetalle.properties.name}</p>
+
+                        <p>Año de nacimiento: {personajeDetalle.properties.birth_year}</p>
+                        <p>Genero: {personajeDetalle.properties.gender}</p>
+                        <p>Altura: {personajeDetalle.properties.height}</p>
+                        <p>Peso: {personajeDetalle.properties.mass}</p>
+                        <p>Color de Ojos: {personajeDetalle.properties.eye_color}</p>
+                        <p>Color de Cabello: {personajeDetalle.properties.hair_color}</p>
+                    </div>
+                  )}  
+            </div>
+        </div>

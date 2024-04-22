@@ -14,7 +14,7 @@ export const PersonaCard = ({ persona, agregarFavorito, favoritos }) => {
                 <div className="card-body">
                     <h5 className="card-title">{persona.name}</h5>
                     <div className="botonesFavLeerMas">
-                        <a href="#" className="btn btn-danger">Leer Mas!</a>
+                        <Link to={`/personaje/${persona.uid}`} className="btn btn-danger">Leer Más!</Link>
                         <button onClick={() => agregarFavorito(persona)} className="btn btn-danger">
                             {estaEnFavoritosPersona ? (
                                 <i className="fas fa-heart"></i>
@@ -26,11 +26,12 @@ export const PersonaCard = ({ persona, agregarFavorito, favoritos }) => {
                 </div>
             </div>
         </div>
+
     );
 };
 
 export const VehiculoCard = ({ vehiculo, agregarFavorito, favoritos }) => {
-    
+
     const estaEnFavoritosVehiculo = favoritos.some(favorito => favorito.name === vehiculo.name);
 
     return (
@@ -41,7 +42,7 @@ export const VehiculoCard = ({ vehiculo, agregarFavorito, favoritos }) => {
                     <h5 className="card-title">{vehiculo.name}</h5>
 
                     <div className="botonesFavLeerMas">
-                        <a href="#" className="btn btn-danger">Leer Más!</a>
+                        <Link to={`/vehiculo/${vehiculo.uid}`} className="btn btn-danger">Leer Más!</Link>
                         <button onClick={() => agregarFavorito(vehiculo)} className="btn btn-danger">
                             {estaEnFavoritosVehiculo ? (
                                 <i className="fas fa-heart"></i>
@@ -57,7 +58,7 @@ export const VehiculoCard = ({ vehiculo, agregarFavorito, favoritos }) => {
 };
 
 export const PlanetaCard = ({ planeta, agregarFavorito, favoritos }) => {
-    
+
 
     const estaEnFavoritosPlaneta = favoritos.some(favorito => favorito.name === planeta.name);
 
@@ -68,7 +69,7 @@ export const PlanetaCard = ({ planeta, agregarFavorito, favoritos }) => {
                 <div className="card-body">
                     <h5 className="card-title">{planeta.name}</h5>
                     <div className="botonesFavLeerMas">
-                        <a href="#" className="btn btn-danger">Leer Más!</a>
+                        <Link to={`/planeta/${planeta.uid}`} className="btn btn-danger">Leer Más!</Link>
                         <button onClick={() => agregarFavorito(planeta)} className="btn btn-danger">
                             {estaEnFavoritosPlaneta ? (
                                 <i className="fas fa-heart"></i>

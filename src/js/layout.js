@@ -6,7 +6,8 @@ import { App } from "/workspaces/JoseRGM9-startWars/src/js/views/App.js";
 import { Navbar } from "/workspaces/JoseRGM9-startWars/src/js/component/navbar.js";
 import { Context } from '/workspaces/JoseRGM9-startWars/src/js/store/appContext.js';
 import { PersonajeDetalle } from '/workspaces/JoseRGM9-startWars/src/js/component/PersonajeDetalle.jsx';
-
+import { VehiculoDetalle } from '/workspaces/JoseRGM9-startWars/src/js/component/VehiculoDetalle.jsx';
+import { PlanetaDetalle } from '/workspaces/JoseRGM9-startWars/src/js/component/PlanetaDetalle.jsx';
 
 import injectContext from "./store/appContext";
 
@@ -26,6 +27,8 @@ const Layout = () => {
 					<Routes>
 						<Route path="/" element={<App />} />
 						<Route path="/personaje/:id" element={<PersonajeDetalle />} />
+						<Route path="/vehiculo/:id" element={<VehiculoDetalle />} />
+						<Route path="/planeta/:id" element={<PlanetaDetalle />} />
 					</Routes>
 				</ScrollToTop>
 			</BrowserRouter>
