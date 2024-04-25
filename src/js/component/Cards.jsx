@@ -10,7 +10,9 @@ export const PersonaCard = ({ persona, agregarFavorito, favoritos }) => {
     return (
         <div className="containerCard">
             <div className="card">
-                <img src="https://blog.camaralia.com/wp-content/uploads/2016/01/Star-Wars-Blu-ray1.jpg" className="card-img-top" alt="..." />
+                <div className="contenedorImagenCard">
+                    <img src="https://i0.wp.com/www.tomosygrapas.com/wp-content/uploads/2022/05/YODA-BANNER.jpg?resize=725%2C408&ssl=1" className="card-img-top" alt="..." />
+                </div>
                 <div className="card-body">
                     <h5 className="card-title">{persona.name}</h5>
                     <div className="botonesFavLeerMas">
@@ -26,7 +28,6 @@ export const PersonaCard = ({ persona, agregarFavorito, favoritos }) => {
                 </div>
             </div>
         </div>
-
     );
 };
 
@@ -37,7 +38,9 @@ export const VehiculoCard = ({ vehiculo, agregarFavorito, favoritos }) => {
     return (
         <div className="containerCard">
             <div className="card">
-                <img src="https://blog.camaralia.com/wp-content/uploads/2016/01/Star-Wars-Blu-ray1.jpg" className="card-img-top" alt="..." />
+                <div className="contenedorImagenCard">
+                    <img src="https://i.blogs.es/66ca1c/star-wars-guerra/1366_2000.jpeg" className="card-img-top" alt="..." />
+                </div>
                 <div className="card-body">
                     <h5 className="card-title">{vehiculo.name}</h5>
 
@@ -64,7 +67,9 @@ export const PlanetaCard = ({ planeta, agregarFavorito, favoritos }) => {
     return (
         <div className="containerCard">
             <div className="card">
-                <img src="https://blog.camaralia.com/wp-content/uploads/2016/01/Star-Wars-Blu-ray1.jpg" className="card-img-top" alt="..." />
+                <div className="contenedorImagenCard">
+                    <img src="https://static.wikia.nocookie.net/esstarwars/images/5/52/Tatooine_TOR_New.jpg/revision/latest?cb=20221012203454" className="card-img-top" alt="..." />
+                </div>
                 <div className="card-body">
                     <h5 className="card-title">{planeta.name}</h5>
                     <div className="botonesFavLeerMas">

@@ -41,6 +41,22 @@ body {
     margin-right: 65px;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #474747;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #b81212;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #b81212;
+}
+
 .scroll-container>div {
     display: inline-block;
     width: 25%;
@@ -73,25 +89,50 @@ body {
 
 
 /*Cards de personajes detallados*/
+.cardDetalle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 .filaImagenYDescripcion {
     display: flex;
     margin-left: 50px;
     margin-right: 50px;
+    width: 900px;
 }
 
 .columnaImagenYDescripcion {
     display: flex;
     justify-content: center;
     flex: 1;
-    height: 600px;
+    height: 350px;
+    width: 300px;
     padding: 10px;
     border: 1px solid #ccc;
     color: rgb(218, 214, 214);
 }
 
+.columnaImagenYDescripcion2 {
+    flex: 1;
+    height: 350px;
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    color: rgb(218, 214, 214);
+}
+
+.tituloDescripcion {
+    text-align: center;
+}
+
+.contenedorDescripcion {
+    margin-top: 20px;
+}
+
 .cardImagenDetalle {
     max-width: 100%;
-    /* Asegura que la imagen no se extienda más allá del ancho de la columna */
     max-height: 100%;
 }
 
@@ -104,7 +145,6 @@ body {
 .card-body-detalle {
     display: flex;
     flex-wrap: wrap;
-    /* Para que los detalles se envuelvan si no caben en una sola linea */
     justify-content: center;
     margin-top: 20px;
 }
@@ -119,4 +159,11 @@ body {
     border-top: 1px solid #ffffff;
     margin-top: 30px;
     margin-bottom: 30px;
+}
+
+.contenedorImagenCard {
+    width: 437px;
+    height: 245px;
+    overflow: hidden;
+
 }

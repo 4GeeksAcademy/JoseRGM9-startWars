@@ -1,19 +1,24 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Context } from '/workspaces/JoseRGM9-startWars/src/js/store/appContext.js';
+import { Link, } from "react-router-dom";
 
 export const PersonajeDetalle = () => {
     const { id } = useParams();
     const { store, actions } = useContext(Context);
     const [personajeDetalle, setPersonajeDetalle] = useState(null);
+    const [descripcion, setDescripcion] = useState(null);
 
-    useEffect(() => {
-        // Llamo a la funcion fetchPersonajeDetalle con el ID del personaje
-        actions.fetchPersonajeDetalle(id)
+
+    useEffect(() => {       //esto me costo un poco, hasta los guevos estoy jajaja
+        fetch(`https://www.swapi.tech/api/people/${id}`) // Hago la solicitud HTTP al URL del personaje especifico con la id
+            .then(response => response.json())
             .then(data => {
-                setPersonajeDetalle(data); // Actualizo el estado con la informacion del personaje
-                actions.cargarFavoritos()
-            });
+                setPersonajeDetalle(data.result); // Actualizo el estado con la informacion del personaje
+                setDescripcion(data.result.description); // Actualizo el estado con la descripción del personaje
+                actions.cargarFavoritos() // y esto siempre llamar la funcion para seguir cargando los favoritos
+            })
+            .catch(error => console.error('Error', error));
     }, [id]);
 
 
@@ -24,12 +29,19 @@ export const PersonajeDetalle = () => {
                     <div className="columnaImagenYDescripcion">
                         <img src="https://blog.camaralia.com/wp-content/uploads/2016/01/Star-Wars-Blu-ray1.jpg" className="cardImagenDetalle" alt="..." />
                     </div>
-                    <div className="columnaImagenYDescripcion">
-                        <h4>Descripcion</h4>
+                    <div className="columnaImagenYDescripcion2">
+                        <div className="tituloDescripcion">
+                            <h4>Descripcion</h4>
+                        </div>
+                        <div className="contenedorDescripcion">
+                            <p>{descripcion}</p>
+                        </div>
                     </div>
                 </div>
-                <div className="separador">
-                </div>
+            </div>
+            <div className="separador">
+            </div>
+            <div className="containerOtrosDetalles">
                 <div>
                     <h5 className="cardTitulo">Detalles del Personaje</h5>
                 </div>
@@ -68,7 +80,11 @@ export const PersonajeDetalle = () => {
                     <p>Cargando detalles del personaje...</p>
                 }
             </div>
+            <div className="col text-center">
+                <Link to="/">
+                    <button className="VolverListaContactos btn btn-danger mt-5">Volver a Pagina de Inicio</button>
+                </Link>
+            </div>
         </div>
-
     );
 };
