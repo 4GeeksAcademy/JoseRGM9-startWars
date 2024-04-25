@@ -8,6 +8,7 @@ import { Context } from '/workspaces/JoseRGM9-startWars/src/js/store/appContext.
 import { PersonajeDetalle } from '/workspaces/JoseRGM9-startWars/src/js/component/PersonajeDetalle.jsx';
 import { VehiculoDetalle } from '/workspaces/JoseRGM9-startWars/src/js/component/VehiculoDetalle.jsx';
 import { PlanetaDetalle } from '/workspaces/JoseRGM9-startWars/src/js/component/PlanetaDetalle.jsx';
+import { Footer } from "/workspaces/JoseRGM9-startWars/src/js/component/Footer.jsx";
 
 import injectContext from "./store/appContext";
 
@@ -30,6 +31,7 @@ const Layout = () => {
 						<Route path="/vehiculo/:id" element={<VehiculoDetalle />} />
 						<Route path="/planeta/:id" element={<PlanetaDetalle />} />
 					</Routes>
+					<Footer />
 				</ScrollToTop>
 			</BrowserRouter>
 		</div>

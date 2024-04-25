@@ -62,7 +62,6 @@ export const App = () => {
                     </div>
                 ))}
             </div>
-            <div className="finalContainer">Copyright © The Programer Fit</div>
         </div>
     );
 };
