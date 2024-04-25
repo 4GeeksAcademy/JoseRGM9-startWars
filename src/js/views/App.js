@@ -22,7 +22,7 @@ export const App = () => {
                 <h2>Personajes</h2>
             </div>
             <div className="scroll-container">
-                {store.personas.map((persona, index) => (
+                {store.personas && store.personas.map((persona, index) => (
                     <div className="cardContainer" key={index}>
                         <PersonaCard
                             persona={persona}
@@ -37,7 +37,7 @@ export const App = () => {
                 <h2>Vehículos</h2>
             </div>
             <div className="scroll-container">
-                {store.vehiculos.map((vehiculo, index) => (
+                {store.vehiculos && store.vehiculos.map((vehiculo, index) => (
                     <div className="col-md-3" key={index}>
                         <VehiculoCard
                             vehiculo={vehiculo}
@@ -52,7 +52,7 @@ export const App = () => {
                 <h2>Planetas</h2>
             </div>
             <div className="scroll-container">
-                {store.planetas.map((planeta, index) => (
+                {store.planetas && store.planetas.map((planeta, index) => (
                     <div className="col-md-3" key={index}>
                         <PlanetaCard
                             planeta={planeta}
