@@ -170,6 +170,11 @@ body {
         display: flex;
         justify-content: space-between;
     }
+
+    .detallee {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 .tituloDescripcion {
