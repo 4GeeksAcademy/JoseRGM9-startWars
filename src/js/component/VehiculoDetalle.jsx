@@ -22,6 +22,7 @@ export const VehiculoDetalle = () => {
 
 
     return (
+        <div className="container">
         <div className="containerCardDetalle">
             <div className="cardDetalle">
                 <div className="filaImagenYDescripcion">
@@ -85,6 +86,6 @@ export const VehiculoDetalle = () => {
                 </Link>
             </div>
         </div>
-
+        </div>
     );
 };

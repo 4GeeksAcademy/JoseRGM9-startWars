@@ -5,15 +5,14 @@ body {
     background-color: black;
 }
 
-
 /*Navbar*/
 
 .navbar-brand {
-    margin-left: 70px;
+    margin-left: 20%;
 }
 
 .botonFavoritos {
-    margin-right: 65px;
+    margin-right: 20px;
 }
 
 .dropdown-menu {
@@ -39,6 +38,7 @@ body {
     white-space: nowrap;
     margin-left: 50px;
     margin-right: 65px;
+    margin-bottom: 20px;
 }
 
 ::-webkit-scrollbar {
@@ -59,13 +59,51 @@ body {
 
 .scroll-container>div {
     display: inline-block;
-    width: 25%;
-    /* Ajusto el ancho de cada tarjeta para mostrar cuatro tarjetas por fila y no se vea feo */
+    width: calc(18% - 20px);
+    margin-bottom: 20px;
+}
+
+/*esto es para mostrar cuantas tarjetas quiero que se vean depende del tamaño de la pantalla*/
+@media screen and (max-width: 1550px) {
+    .scroll-container>div {
+        width: calc(20% - 20px);
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .scroll-container>div {
+        width: calc(25% - 20px);
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .scroll-container>div {
+        width: calc(33% - 20px);
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .scroll-container>div {
+        width: calc(50% - 20px);
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .scroll-container>div {
+        width: 100%;
+        height: auto;
+    }
 }
 
 .card {
     background-color: rgb(218, 214, 214);
     margin-left: 10px;
+    width: 220px;
+    height: 250px;
 }
 
 .card-title {
@@ -98,17 +136,15 @@ body {
 
 .filaImagenYDescripcion {
     display: flex;
-    margin-left: 50px;
-    margin-right: 50px;
-    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
 }
 
 .columnaImagenYDescripcion {
     display: flex;
     justify-content: center;
     flex: 1;
-    height: 350px;
-    width: 300px;
     padding: 10px;
     border: 1px solid #ccc;
     color: rgb(218, 214, 214);
@@ -116,11 +152,24 @@ body {
 
 .columnaImagenYDescripcion2 {
     flex: 1;
-    height: 350px;
-    width: 300px;
     padding: 10px;
     border: 1px solid #ccc;
     color: rgb(218, 214, 214);
+}
+
+@media screen and (max-width: 768px) {
+    .filaImagenYDescripcion {
+        flex-direction: column;
+    }
+
+    .card-body-detalle {
+        flex-direction: column;
+    }
+
+    .detalle {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 .tituloDescripcion {
@@ -150,7 +199,7 @@ body {
 }
 
 .detalle {
-    margin-left: 50px;
+    margin-right: 2%;
     color: rgb(218, 214, 214);
 
 }
@@ -162,8 +211,46 @@ body {
 }
 
 .contenedorImagenCard {
-    width: 437px;
-    height: 245px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.card-img-top {
+    max-width: 100%;
+}
+
+
+.navbar {
+    height: 55px;
+}
+
+.espacioNavbar {
+    height: 70px;
+}
+
+.containerNavbar {
+    position: relative;
+}
+
+.container {
+    overflow-x: hidden;
+}
+
+.footer {
+    position: fixed;
+    bottom: -15px;
+    width: 100%;
+    background-color: #575858;
+    color: white;
+    margin-top: 80px;
+}
+
+.PrimerFooter {
+    color: black;
+    margin-bottom: 50px;
 }
