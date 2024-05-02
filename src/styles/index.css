@@ -201,7 +201,10 @@ body {
 .detalle {
     margin-right: 2%;
     color: rgb(218, 214, 214);
+}
 
+.detallee {
+    color: rgb(218, 214, 214);
 }
 
 .separador {
